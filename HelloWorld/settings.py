@@ -78,9 +78,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'socialmedia',
-        'USER':'root',
-        'PASSWORD':'007007',
-        'HOST':'127.0.0.1',
+        'USER':'djangomsql@admin',
+        'PASSWORD':'Djangomsql@1',
+        'HOST':'djangomsql.database.windows.net',
         'PORT':'3306'
     }
 }
