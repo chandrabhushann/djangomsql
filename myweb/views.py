@@ -8,6 +8,19 @@ from myweb.models import VID
 from myweb.models import MUS
 from myweb.models import VIDEO
 
+
+from rest_framework.decorators import api_view,renderer_classes
+from rest_framework.response import Response
+from rest_framework import status
+from myweb.serializers import VIDSerializer
+
+@api_view(['GET'])
+def get_video(request):
+    videos = VID.objects.all()
+    ser = VIDSerializer(videos,many=True)
+    return Response({'data':ser.data})
+
+
 def uploadImg(request):
 
     if request.method == 'POST':

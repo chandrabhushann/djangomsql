@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'myweb',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -48,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'HelloWorld.middleware.mid.APIGateway'
 ]
 
 ROOT_URLCONF = 'HelloWorld.urls'
@@ -74,17 +76,35 @@ WSGI_APPLICATION = 'HelloWorld.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'socialmedia',
+#         'USER':'pgsqadmin@salessamplesdev',
+#         'PASSWORD':'Salessamples@1',
+#         'HOST':'salessamplesdev.mysql.database.azure.com',
+#         'PORT':'3306',
+#         'OPTIONS': {'ssl': True},
+#     }
+# }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'socialmedia',
+#         'USER':'root',
+#         'PASSWORD':'chandra@123',
+#         'HOST':'127.0.0.1',
+#         'PORT':'3306',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'socialmedia',
-        'USER':'root',
-        'PASSWORD':'007007',
-        'HOST':'127.0.0.1',
-        'PORT':'3306'
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
