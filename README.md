@@ -1,5 +1,5 @@
 Django-MySQL-Example
-=========
+==============
 
 A simple example, based on Python3 and MySQL, upload and show multimedia, like musics, pictures or videos.
 
